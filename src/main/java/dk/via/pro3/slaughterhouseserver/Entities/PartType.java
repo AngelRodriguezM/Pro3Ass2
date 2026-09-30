@@ -1,19 +1,26 @@
 package dk.via.pro3.slaughterhouseserver.Entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "part_type")
 public class PartType
 {
   @Id
+  @Column(name = "id")
   private int partTypeId;
 
+  @Column(name = "name")
   private String name;
+
+  @Column(name = "description")
   private String description;
 
   @OneToMany(mappedBy = "partType")

@@ -1,20 +1,27 @@
 package dk.via.pro3.slaughterhouseserver.Entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "part")
 public class Part
 {
   @Id
+  @Column(name = "id")
   private int partId;
 
+  @Column(name = "weight")
   private int weight;
+
+  @Column(name = "registered_at")
   private LocalDateTime registeredAt;
 
   @ManyToOne(fetch = FetchType.LAZY)

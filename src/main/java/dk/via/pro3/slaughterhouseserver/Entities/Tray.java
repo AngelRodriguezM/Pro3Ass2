@@ -1,18 +1,24 @@
 package dk.via.pro3.slaughterhouseserver.Entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "tray")
 public class Tray
 {
   @Id
+  @Column(name = "id")
   private int trayId;
+
+  @Column(name = "max_weight_capacity")
   private int maxWeightCapacity;
 
   @OneToMany(mappedBy = "tray")

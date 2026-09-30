@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package traceability;
+
+option java_multiple_files = true;
+option java_package = "dk.via.slaughterhouse.generated";
+option java_outer_classname = "TraceabilityProto";
+
+service TraceabilityService {
+
+  rpc GetAnimalsForProduct (ProductRequest)
+      returns (AnimalListResponse);
+
+  rpc GetProductsForAnimal (AnimalRequest)
+      returns (ProductListResponse);
+}
+
+message ProductRequest {
+  int32 product_id = 1;
+}
+
+message AnimalRequest {
+  int32 animal_id = 1;
+}
+
+message AnimalListResponse {
+  repeated int32 animal_ids = 1;
+}
+
+message ProductListResponse {
+  repeated int32 product_ids = 1;
+}

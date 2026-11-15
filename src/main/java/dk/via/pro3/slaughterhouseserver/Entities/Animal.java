@@ -1,5 +1,6 @@
 package dk.via.pro3.slaughterhouseserver.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -80,6 +81,7 @@ public class Animal
     this.registeredAt = registeredAt;
   }
 
+  @JsonIgnore
   public Supplier getSupplier()
   {
     return supplier;
@@ -114,6 +116,7 @@ public class Animal
     this.weight = weight;
   }
 
+  @JsonIgnore
   public List<Part> getParts()
   {
     return parts;
